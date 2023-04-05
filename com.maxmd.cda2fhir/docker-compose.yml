@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  sml-mdmi:
+    image: mdmiservices/eclipseservice:latest
+    container_name: maxmd-mdmi
+    environment:
+      - JAVA_OPTS="-Xmx6048m"
+    network_mode: default
+    ports:
+      - "8282:8282"
+    restart: always
+    volumes:   
+     - ./src/main/resources/maps:/maps
+
+

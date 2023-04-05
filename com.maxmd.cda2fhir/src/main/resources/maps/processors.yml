@@ -1,0 +1,29 @@
+version: 2.1
+preprocessors:
+    cda:
+       name: CDAPreProcesor
+       class: org.mdmi.processors.cda.CDAPreProcesor
+       groups:
+         - CDAR2 
+         
+postprocessors:
+    fhir:
+       name: FHIRR4PostProcessorJson
+       class: org.mdmi.processors.fhir.FHIRR4PostProcessorJson
+       groups:
+         - FHIRR4JSON         
+
+sourcesemanticprocessors:
+    sourcelog:
+        name: SourceLogSemantic
+        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+        arguments:
+          direction: FROM         
+
+targetsemanticprocessors:
+    targetlog:
+        name: TargetLogSemantic
+        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+        arguments:
+          direction: TO
+                     
